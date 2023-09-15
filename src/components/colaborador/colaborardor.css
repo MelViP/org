@@ -1,0 +1,36 @@
+.colaborador{
+    width: 262px;
+    height: 272px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+    background: #FFF;
+}
+.portada{
+    border-radius: 10px 10px 0 0;
+    height: 91px;
+}
+.portada > img{
+    width: 120px;
+    height: 120px;
+    border-radius: 230px;
+    position: relative;
+    margin: 33px;
+}
+.info{
+    font-family: Montserrat;
+    text-align: center;
+    margin-top: 90px;
+    text-transform: capitalize;
+}
+.info > h4{
+    color: #6278F7;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+.info > h5{
+    color: #212121;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 9px;
+}

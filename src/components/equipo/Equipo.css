@@ -1,0 +1,21 @@
+.equipo{
+    /* background-color: #d9f7e3; */
+    padding: 32px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 32px;
+    text-align: center;
+}
+.equipo h3{
+
+    font-family: 'Prata';
+    font-weight: 400;
+    color: #212121;
+    border-bottom: 4px solid /*#57c278*/;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.colaboradoresCards{
+    display: flex;
+    justify-content: space-evenly;
+}
