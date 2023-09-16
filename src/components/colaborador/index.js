@@ -3,6 +3,7 @@ import "./colaborardor.css";
 const Colaborador = (props) => {
 
     const portada = props.portada;
+    
     const {
         name,
         job,

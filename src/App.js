@@ -82,9 +82,11 @@ function App() {
 
       {
       teams.map( (equipo) => <Equipo 
-        datos={equipo} key={equipo.title}
+        datos={equipo}
+        key={equipo.title}
         colaboradores={colaboradores.filter( colaborador => colaborador.team === equipo.title )}
-      />)
+          />
+        )
       }
 
       <Footer/>

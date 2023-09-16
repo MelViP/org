@@ -5,6 +5,7 @@ const Equipo = (props) => {
   const { colaboradores } = props;
 
   const { colorPrimario, colorSecundario, title } = props.datos;
+
   const obj = {
     backgroundColor: colorSecundario,
   };
@@ -14,16 +15,29 @@ const Equipo = (props) => {
   const portada = {
     backgroundColor: colorPrimario,
   };
-
+   
+  console.log("pruebra: "+ colaboradores.lenght > 0)
+  
   return <>
-    { colaboradores.lenght > 0 &&
+    { 
+      colaboradores.length > 0 &&
+
         <section className="equipo" style={obj}>
+
           <h3 style={titleStyle}>{title}</h3>
+
           <div className="colaboradoresCards">
-            {colaboradores.map((colaborador, index) => (
-              <Colaborador key={index} datos={colaborador} portada={portada} />
-            ))}
+            {
+              colaboradores.map((colaborador, index) => ( <Colaborador 
+                            key={index} 
+                            datos={colaborador} 
+                            portada={portada} 
+                          /> 
+                      )
+                      )
+            }
           </div>
+
         </section>
     }
     </>
