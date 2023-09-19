@@ -19,3 +19,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+.colorPicker{
+    position: relative;
+    left: 55%;
+}

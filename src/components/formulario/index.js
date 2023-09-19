@@ -1,5 +1,5 @@
 import "./Formulario.css";
-import CampoTexto from "../campoTexto";
+import Campo from "../campo";
 import ListaOpciones from "../ListaOpciones";
 import Boton from "../Boton";
 import { useState } from "react";
@@ -10,7 +10,10 @@ const Formulario = (props) => {
   const [photo, getPhoto] = useState(``);
   const [team, getTeam] = useState(``);
 
-  const {registrarColaborador} = props;
+  const [title, getTitle] = useState("");
+  const [color, getColor] = useState("");
+
+  const {registrarColaborador, newTeam} = props;
 
   const manejarEnvio = (evento) => {
     evento.preventDefault();
@@ -23,26 +26,31 @@ const Formulario = (props) => {
     registrarColaborador(sendValue);
   };
 
+  const manageNewTeam = (e) => {
+    e.preventDefault();
+    newTeam({title, colorPrimario: color})
+  }
+
   return (
     <section className="formulario">
       <form onSubmit={manejarEnvio}>
         <h2>Rellena el formulario para crear el colaborador.</h2>
 
-        <CampoTexto
+        <Campo
           titulo="Nombre"
           placeholder="nombre"
           value={name}
           getValue={getName}
         />
 
-        <CampoTexto
+        <Campo
           titulo="Puesto"
           placeholder="puesto"
           value={job}
           getValue={getJob}
         />
 
-        <CampoTexto
+        <Campo
           titulo="Foto"
           placeholder="foto"
           value={photo}
@@ -56,6 +64,27 @@ const Formulario = (props) => {
         />
 
         <Boton>Crear</Boton>
+      </form>
+
+      <form onSubmit={manageNewTeam}>
+        <h2>Rellena el formulario para crear el equipo.</h2>
+
+        <Campo
+          titulo="Titulo"
+          placeholder="ingresar titulo"
+          value={title}
+          getValue={getTitle}
+        />
+
+        <Campo
+          titulo="Color"
+          placeholder="Ingresar Hexadecimal"
+          value={color}
+          getValue={getColor}
+          type="color"
+        />
+
+        <Boton>Registrar</Boton>
       </form>
     </section>
   );

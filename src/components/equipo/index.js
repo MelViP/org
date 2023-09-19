@@ -1,13 +1,15 @@
 import "./Equipo.css";
 import Colaborador from "../colaborador";
+import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props) => {
-  const { colaboradores } = props;
 
-  const { colorPrimario, colorSecundario, title } = props.datos;
+  const { colorPrimario, colorSecundario, title, id } = props.datos;
+
+  const { colaboradores, deletePerson, colorPicker, like } = props;
 
   const obj = {
-    backgroundColor: colorSecundario,
+    backgroundColor: hexToRgba(colorPrimario, 0.5),
   };
   const titleStyle = {
     borderColor: colorPrimario,
@@ -15,14 +17,21 @@ const Equipo = (props) => {
   const portada = {
     backgroundColor: colorPrimario,
   };
-   
-  console.log("pruebra: "+ colaboradores.lenght > 0)
   
   return <>
     { 
       colaboradores.length > 0 &&
 
         <section className="equipo" style={obj}>
+
+          <input 
+            type="color"
+            className="colorPicker"
+            value={colorPrimario}
+            onChange={(e)=>{
+              colorPicker(e.target.value, id)
+            }}
+          />
 
           <h3 style={titleStyle}>{title}</h3>
 
@@ -31,7 +40,10 @@ const Equipo = (props) => {
               colaboradores.map((colaborador, index) => ( <Colaborador 
                             key={index} 
                             datos={colaborador} 
-                            portada={portada} 
+                            portada={portada}
+                            deletePerson={deletePerson} 
+                            id={id}
+                            like={like}
                           /> 
                       )
                       )

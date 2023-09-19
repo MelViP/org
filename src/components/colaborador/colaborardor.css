@@ -1,26 +1,32 @@
 .colaborador{
     width: 262px;
-    height: 272px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
-    background: #FFF;
+    /* height: 272px; */
+    position: relative;
 }
 .portada{
+    Width: 262px;
     border-radius: 10px 10px 0 0;
     height: 91px;
 }
 .portada > img{
     width: 120px;
     height: 120px;
-    border-radius: 230px;
+    border-radius: 50%;
     position: relative;
-    margin: 33px;
+    bottom: -38px;
 }
 .info{
-    font-family: Montserrat;
+    height: 178.33;
+    Width: 262px;
+    padding: 90px 0 26.73px 0;
+
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    margin-top: 90px;
     text-transform: capitalize;
+
+    border-radius: 0 10px 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
 }
 .info > h4{
     color: #6278F7;
@@ -32,5 +38,10 @@
     color: #212121;
     font-size: 1rem;
     font-weight: 400;
-    margin-top: 9px;
+    margin: 5px 0;
+}
+.delete{
+    position: absolute;
+    top: -15px;
+    right: -15px;
 }
